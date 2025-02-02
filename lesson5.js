@@ -2,11 +2,11 @@
 function pow(x, y) {
     var result = 1;
     for (var i = 0; i < y; i++)
-      result = result * x;
+        result = result * x;
     return result;
-  };
-  let homework3 = pow(6, 7);
-  console.log(homework3);
+};
+let homework3 = pow(6, 7);
+console.log(homework3);
 
 
 
