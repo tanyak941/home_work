@@ -7,10 +7,8 @@ function checkProbabilityTheory(count) {
         i = Math.ceil(i)
         if (i % 2 == 0) {
             countEven++
-            console.log(`${i} even number`)
         } else {
             countOdd++
-            console.log(`${i} odd number`)
         }
         countTotal++
     }
