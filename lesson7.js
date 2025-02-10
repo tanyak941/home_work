@@ -1,35 +1,34 @@
 const beatySalonPro = {
-    "nails": "20 $",
-    "eyeLashes": "30 $",
-    "eyeBrows": "22 $"
-};
+    services: {
+        "nails": "20 $",
+        "eyeLashes": "30 $",
+        "eyeBrows": "22 $"
+    },
 
-let pricesPro = Object.values(beatySalonPro);
-beatySalonPro["makeup"] = "59.99 $";
-pricesPro = Object.values(beatySalonPro);;
-let converted = pricesPro.map(parseFloat);
+    price() {
+        let totalPrices = 0;
+        let servicesItems = Object.values(this.services).map(parseFloat);
 
-beatySalonPro.price = function () {
-    let totalPrices = 0;
-    for (let i = 0; i < converted.length; i++ ) {
-        totalPrices += converted[i];
+        for (let i = 0; i < servicesItems.length; i++) {
+            totalPrices += servicesItems[i];
+        }
+        return totalPrices.toFixed(2);
+    },
+
+    minPrice() {
+        const min = Math.min(...Object.values(this.services).map(parseFloat))
+        return min.toFixed(2)
+
+    },
+    maxPrice() {
+        const max = Math.max(...Object.values(this.services).map(parseFloat))
+        return max.toFixed(2)
+
     }
-    return totalPrices;
 }
+beatySalonPro.services["makeup"] = "59.99 $";
+beatySalonPro.services["haircut"] = "39.99 $";
 
-beatySalonPro.minPrice = function () {
-    const min = Math.min(...converted)
-    return min;
-
-}
-
-beatySalonPro.maxPrice = function () {
-    const max = Math.max(...converted)
-    return max;
-}
-
-console.log(beatySalonPro.price() + " загальну вартість наданих послуг"); 
-console.log(beatySalonPro.minPrice() + " мінімальна ціна"); 
-console.log(beatySalonPro.maxPrice() + " максимальна ціна"); 
-
-
+console.log(beatySalonPro.price() + " $ загальна вартість наданих послуг");
+console.log(beatySalonPro.minPrice() + " $ мінімальна ціна");
+console.log(beatySalonPro.maxPrice() + " $ максимальна ціна");
