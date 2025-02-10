@@ -3,19 +3,33 @@ let beatySalonPro = {
     "eyeLashes": "30 $",
     "eyeBrows": "22 $"
 };
-    
+
 let pricesPro = Object.values(beatySalonPro);
 beatySalonPro.makeup = "59.99 $";
 pricesPro = Object.values(beatySalonPro);;
 let converted = pricesPro.map(parseFloat);
-const minPrice = Math.min(...converted)
-console.log(`${minPrice} is a min price`)
-const maxPrice = Math.max(...converted)
-console.log(`${maxPrice} is a max price`)
 
-let totalPrices = 0;
-for (let i = 0; i < converted.length; i++ ) {
-    totalPrices += converted[i];
+beatySalonPro.price = function () {
+    let totalPrices = 0;
+    for (let i = 0; i < converted.length; i++ ) {
+        totalPrices += converted[i];
+    }
+    return totalPrices;
 }
-console.log(`${totalPrices} is sum of prices`)
+
+beatySalonPro.minPrice = function () {
+    const min = Math.min(...converted)
+    return min;
+
+}
+
+beatySalonPro.maxPrice = function () {
+    const max = Math.max(...converted)
+    return max;
+}
+
+console.log(beatySalonPro.price() + " загальну вартість наданих послуг"); 
+console.log(beatySalonPro.minPrice() + " мінімальна ціна"); 
+console.log(beatySalonPro.maxPrice() + " максимальна ціна"); 
+
 
