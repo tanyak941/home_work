@@ -5,7 +5,7 @@ let beatySalonPro = {
 };
 
 let pricesPro = Object.values(beatySalonPro);
-beatySalonPro.makeup = "59.99 $";
+beatySalonPro["makeup"] = "59.99 $";
 pricesPro = Object.values(beatySalonPro);;
 let converted = pricesPro.map(parseFloat);
 
