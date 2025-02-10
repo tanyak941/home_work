@@ -5,7 +5,7 @@ let beatySalonPro = {
 };
     
 let pricesPro = Object.values(beatySalonPro);
-beatySalonPro.makeup = "50 $";
+beatySalonPro.makeup = "59.99 $";
 pricesPro = Object.values(beatySalonPro);;
 let converted = pricesPro.map(parseFloat);
 const minPrice = Math.min(...converted)
@@ -17,5 +17,5 @@ let totalPrices = 0;
 for (let i = 0; i < converted.length; i++ ) {
     totalPrices += converted[i];
 }
-console.log(`${totalPrices} sum of prices`)
+console.log(`${totalPrices} is sum of prices`)
 
