@@ -1,4 +1,4 @@
-let beatySalonPro = {
+const beatySalonPro = {
     "nails": "20 $",
     "eyeLashes": "30 $",
     "eyeBrows": "22 $"
